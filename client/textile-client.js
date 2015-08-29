@@ -16,7 +16,6 @@ Template.clients.helpers({
 });
 Template.vendors.helpers({
   vendors: function(){
-    console.log('vendor lookup');
     return Vendors.find();
   }
 });
@@ -41,11 +40,27 @@ Template.sales.events({
 });
 Template.addVendor.events({
   "submit form":function(event){
-    console.log(event.target.name.value);
     Meteor.call("addVendor", event.target.name.value)
-
     event.target.name.value="";
     //prevent default
     return false;
   }
 });
+Template.addClient.events({
+  "submit form":function(event){
+    Meteor.call("addClient", event.target.name.value)
+    event.target.name.value="";
+    //prevent default
+    return false;
+  }
+});
+Template.addSale.events({
+  "submit form": function(event){
+    var textile = event.target.textile_id.value;
+    var volume = event.target.volume.value;
+    var client = event.target.client_id.value;
+    Meteor.call("addSale", textile, volume, client);
+    //prevent default
+    return false;
+  }
+})

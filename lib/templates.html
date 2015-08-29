@@ -3,10 +3,14 @@
   {{#each textiles}}
     {{> textile}}
   {{/each}}
+  <hr/>
+  {{> addTextile}}
 </template>
 
 <template name="textile">
-
+  <div class="row">
+    <div class="col-md-3"><p>{{name}}</p></div>
+  </div>
 </template>
 
 <template name="addTextile">
@@ -45,14 +49,26 @@
   {{#each clients}}
     {{>client}}
   {{/each}}
+  <hr/>
+  {{> addClient}}
 </template>
 
 <template name="client">
-
+  <div class="row">
+    <div class="col-md-3"><p>{{name}}</p></div>
+  </div>
 </template>
 
 <template name="addClient">
-
+  <h3>Add Client</h3>
+  <form class="new-vendor">
+    <div class="row">
+      <div class="col-md-12">
+        <input type="text" name="name"/>
+        <input type="submit" name="client-submit" class="addClient btn btn-primary" value="Add Client"/>
+      </div>
+    </div>
+  </form>
 </template>
 
 <template name="sales">
@@ -60,12 +76,34 @@
   {{#each sales}}
     {{>sale}}
   {{/each}}
+  <hr/>
+  {{> addSale}}
 </template>
 
 <template name="sale">
-
+  <div class="row">
+    <div class="col-md-3"><p>{{textile}}: sold {{volume}} units to {{client}}</p></div>
+  </div>
 </template>
 
 <template name="addSale">
-
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="textile_id">Textile ID</label>
+        <input type="text" name="textile_id"/>
+      </div>
+      <div class="col-md-3">
+        <label for="volume">Textile Volume</label>
+        <input type="text" name="volume"/>
+      </div>
+      <div class="col-md-3">
+        <label for="client_id">Client ID</label>
+        <input type="text" name="client_id"/>
+      </div>
+      <div>
+        <input type="submit" class="addSale btn btn-primary"/>
+      </div>
+    </div>
+  </form>
 </template>
