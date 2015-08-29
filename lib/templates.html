@@ -1,0 +1,70 @@
+<template name="textiles">
+  <p>This will render all textiles</p>
+  {{#each textiles}}
+    {{> textile}}
+  {{/each}}
+</template>
+
+<template name+"textile">
+
+</template>
+
+<template name="addTextile">
+
+</template>
+
+<template name="vendors">
+  <p>This will render all vendors</p>
+  <p>{{vendors}}</p>
+  {{#each vendors}}
+    {{> vendor}}
+  {{/each}}
+</template>
+
+<template name="vendor">
+  <div class="row">
+    <div class="col-md-3"><p>{{name}}</p></div>
+    <div class="col-md-3"><p>Blerch</p></div>
+  </div>
+</template>
+
+<template name="addVendor">
+  <form class="new-vendor">
+    <div class="row">
+      <div class="col-md-12">
+        <input type="text" name="name"/>
+        <input type="submit" name="vendor-submit" class="addVendor btn btn-primary" value="Add Vendor"/>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="clients">
+  <p>This will render all clients</p>
+  {{#each clients}}
+    {{>client}}
+  {{/each}}
+</template>
+
+<template name="client">
+
+</template>
+
+<template name="addClient">
+
+</template>
+
+<template name="sales">
+  <p>This will render all sales</p>
+  {{#each sales}}
+    {{>sale}}
+  {{/each}}
+</template>
+
+<template name="sale">
+
+</template>
+
+<template name="addSale">
+
+</template>
