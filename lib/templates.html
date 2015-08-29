@@ -15,20 +15,21 @@
 
 <template name="vendors">
   <p>This will render all vendors</p>
-  <p>{{vendors}}</p>
   {{#each vendors}}
     {{> vendor}}
   {{/each}}
+  <hr/>
+  {{> addVendor}}
 </template>
 
 <template name="vendor">
   <div class="row">
     <div class="col-md-3"><p>{{name}}</p></div>
-    <div class="col-md-3"><p>Blerch</p></div>
   </div>
 </template>
 
 <template name="addVendor">
+  <h3>Add Vendor</h3>
   <form class="new-vendor">
     <div class="row">
       <div class="col-md-12">

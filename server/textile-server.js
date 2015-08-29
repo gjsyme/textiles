@@ -1,15 +1,15 @@
   Meteor.startup(function () {
     // code to run on server at startup
-    Meteor.publish("Textiles", function(){
+    Meteor.publish("textiles", function(){
       return Textiles.find();
     });
-    Meteor.publish("Vendors", function(){
+    Meteor.publish("vendors", function(){
       return Vendors.find();
     });
-    Meteor.publish("Clients", function(){
+    Meteor.publish("clients", function(){
       return Clients.find();
     });
-    Meteor.publish("Sales", function(){
+    Meteor.publish("sales", function(){
       return Sales.find();
-    });    
+    });
   });

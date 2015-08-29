@@ -16,6 +16,7 @@ Template.clients.helpers({
 });
 Template.vendors.helpers({
   vendors: function(){
+    console.log('vendor lookup');
     return Vendors.find();
   }
 });
