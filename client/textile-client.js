@@ -129,7 +129,8 @@ Template.addTextile.events({
     var unit = event.target.unit.value;
     var vendor = event.target.vendor.selectedOptions[0].value;
     var price = event.target.price.value;
-    Meteor.call("addTextile", name, vendor, unit, price);
+    var inventory = event.target.inventory.value;
+    Meteor.call("addTextile", name, vendor, unit, price, inventory);
     return false;
   }
 });

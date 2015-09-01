@@ -11,9 +11,11 @@
 
 <template name="textile">
   <div class="row">
-    <div class="col-md-3">{{name}}</div>
-    <div class="col-md-3">{{unit}}</div>
-    <div class="col-md-3">{{vendor_by_id vendor_id}}</div>
+    <div class="col-md-2">{{name}}</div>
+    <div class="col-md-2">{{unit}}</div>
+    <div class="col-md-2">{{price}}</div>
+    <div class="col-md-2">{{vendor_by_id vendor_id}}</div>
+    <div class="col-md-2">{{inventory}}</div>
   </div>
 </template>
 
@@ -27,13 +29,16 @@
         <label for="unit">Unit: </label>
         <input type="text" name="unit"/>
         <label for="price">Price per Unit: </label>
-        <input type="number" name="price"/>
+        <input type="number" step="0.01" name="price"/>
+        <label for="vendor">Vendor: </label>
         <select name="vendor">
           <option>Will prepopulate from Vendors</option>
           {{#each vendors}}
             {{>vendorOption}}
           {{/each}}
         </select>
+        <label for="inventory">Inventory</label>
+        <input type="number" name="inventory">
       </div>
     </div>
     <input type="submit" class="btn btn-primary">
@@ -180,13 +185,29 @@
   <h4>This content is all notes / stuff and won't carry through</h4>
   <ul>
     <li>List Vendors</li>
-    <ul><li>name</li></ul>
+    <ul>
+      <li>name</li>
+      <li>showing _id for now for convenience</li>
+    </ul>
     <li>List Clients</li>
-    <ul><li>name</li></ul>
+    <ul>
+      <li>name</li>
+    </ul>
     <li>List Textiles</li>
-    <ul><li>volume, size, color, vendor_id</li></ul>
+    <ul>
+      <li>name</li>
+      <li>unit</li>
+      <li>price</li>
+      <li>vendor_id</li>
+      <li>TODO: inventory</li>
+    </ul>
     <li>List Sales</li>
-    <ul><li>textile_id, volume, client_id</li></ul>
+    <ul>
+      <li>textile_id</li>
+      <li>volume</li>
+      <li>client_id</li>
+      <li>Formatted: [volume] [name] sold to [client]</li>
+    </ul>
   </ul>
   <p>TBD: how the relation exists between Vendor and Textile - is it each vendor/textile is close enough, or should there be a unique textile per color # and vendor such that no textile is multiple uses across vendors</p>
   <h3>Most importantly, track sales of textiles by vendors to clients</h3>
