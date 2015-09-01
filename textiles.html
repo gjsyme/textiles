@@ -9,20 +9,25 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link href="textile.css" rel="stylesheet">
   </div>
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-2"><a href="/">Home</a></div>
+    <div class="col-xs-2"><a href="/vendors">Vendors</a></div>
+    <div class="col-xs-2"><a href="/clients">Clients</a></div>
+    <div class="col-xs-2"><a href="/textiles">Textiles</a></div>
+    <div class="col-xs-2"><a href="/sales">Sales</a></div>
+    <div class="col-xs-1"></div>
+  </div>
 </body>
 
 <template name="home">
-  <h2>This is the home page for Textiles</h2>
-  <div class="row">
-    <div class="col-md-3"><a href="/vendors">Vendors</a></div>
-    <div class="col-md-3"><a href="/clients">Clients</a></div>
-    <div class="col-md-3"><a href="/textiles">Textiles</a></div>
-    <div class="col-md-3"><a href="/sales">Sales</a></div>
+  <div class="col-md-12">
+    <h2>This is the home page for Textiles</h2>
+    <hr/>
+    {{>addSale}}
+    <hr/>
+    {{>about}}
   </div>
-  <hr/>
-  {{>addSale}}
-  <hr/>
-  {{>about}}
 </template>
 
 <template name="list">

@@ -1,10 +1,12 @@
 <template name="textiles">
-  {{> addTextile}}
-  <hr/>
-  <h2>All textiles</h2>
-  {{#each textiles}}
-    {{> textile}}
-  {{/each}}
+  <div class="col-md-12">
+    {{> addTextile}}
+    <hr/>
+    <h2>All textiles</h2>
+    {{#each textiles}}
+      {{> textile}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="textile">
@@ -24,6 +26,8 @@
         <input type="text" name="name"/>
         <label for="unit">Unit: </label>
         <input type="text" name="unit"/>
+        <label for="price">Price per Unit: </label>
+        <input type="number" name="price"/>
         <select name="vendor">
           <option>Will prepopulate from Vendors</option>
           {{#each vendors}}
@@ -37,12 +41,14 @@
 </template>
 
 <template name="vendors">
-  {{> addVendor}}
-  <hr/>
-  <h2>This will render all vendors</h2>
-  {{#each vendors}}
-    {{> vendor}}
-  {{/each}}
+  <div class="col-md-12">
+    {{> addVendor}}
+    <hr/>
+    <h2>This will render all vendors</h2>
+    {{#each vendors}}
+      {{> vendor}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="vendor">
@@ -68,12 +74,14 @@
 </template>
 
 <template name="clients">
-  {{> addClient}}
-  <hr/>
-  <h2>This will render all clients</h2>
-  {{#each clients}}
-    {{>client}}
-  {{/each}}
+  <div class="col-md-12">
+    {{> addClient}}
+    <hr/>
+    <h2>This will render all clients</h2>
+    {{#each clients}}
+      {{>client}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="client">
@@ -95,12 +103,14 @@
 </template>
 
 <template name="sales">
-  {{> addSale}}
-  <hr/>
-  <h2>All Sales</h2>
-  {{#each sales}}
-    {{>sale}}
-  {{/each}}
+  <div class="col-md-12">
+    {{> addSale}}
+    <hr/>
+    <h2>All Sales</h2>
+    {{#each sales}}
+      {{>sale}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="sale">
@@ -108,28 +118,6 @@
     <div class="col-md-12">{{volume}} {{textile_by_id textile}} sold to {{client_by_id client}}</div>
   </div>
 </template>
-
-<!-- <template name="oldSale">
-  <form>
-    <div class="row">
-      <div class="col-md-3">
-        <label for="textile_id">Textile ID</label>
-        <input type="text" name="textile_id"/>
-      </div>
-      <div class="col-md-3">
-        <label for="volume">Textile Volume</label>
-        <input type="text" name="volume"/>
-      </div>
-      <div class="col-md-3">
-        <label for="client_id">Client ID</label>
-        <input type="text" name="client_id"/>
-      </div>
-      <div>
-        <input type="submit" class="addSale btn btn-primary"/>
-      </div>
-    </div>
-  </form>
-</template> -->
 
 <template name="vendorOption">
   <option value="{{_id}}">{{name}}</option>
@@ -148,7 +136,7 @@
       <div class="col-md-6">
         <label for="vendor">Vendor</label>
         <select placeholder="vendor" name="vendor" id="vendor">
-          <option>All Vendors - should have ability to log in -> default to your (vendor) ID</option>
+          <option disabled=true>Select Vendor</option>
           {{#each vendors}}
             {{>vendorOption}}
           {{/each}}
@@ -157,7 +145,7 @@
       <div class="col-md-6">
         <label for="buyer">Customer</label>
         <select name="buyer">
-          <option>All Clients - should have ability to log in -> default to your (buyer) ID</option>
+          <option disabled=true>Select Client</option>
           {{#each clients}}
             {{>clientOption}}
           {{/each}}
@@ -169,14 +157,14 @@
       <div class="col-md-3">
         <label for="textile_id">Textile</label>
         <select name="textile_id" id="textile">
-          <option>Will show all textiles for selected vendor</option>
+          <!-- <option>Will show all textiles for selected vendor</option> -->
           {{#each textiles_for_vendor}}
             {{>textileOption}}
           {{/each}}
         </select>
       </div>
       <div class="col-md-3">
-        <label for="unitName">Type of Units - will call up from the textile selected</label>
+        <label for="unitName">Unit of Measure</label>
         <input type="disabled" value="{{unit_for_textile}}">
       </div>
       <div class="col-md-3">
