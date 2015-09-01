@@ -163,6 +163,7 @@
         <label for="textile_id">Textile</label>
         <select name="textile_id" id="textile">
           <!-- <option>Will show all textiles for selected vendor</option> -->
+          <option disabled="true">--</option>
           {{#each textiles_for_vendor}}
             {{>textileOption}}
           {{/each}}
