@@ -7,6 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="textile.css" rel="stylesheet">
   </div>
 </body>
 
@@ -18,19 +19,10 @@
     <div class="col-md-3"><a href="/textiles">Textiles</a></div>
     <div class="col-md-3"><a href="/sales">Sales</a></div>
   </div>
-  <p>I'd document but the alcohol is winning</p>
-  <ul>
-    <li>List Vendors</li>
-    <ul><li>name</li></ul>
-    <li>List Clients</li>
-    <ul><li>name</li></ul>
-    <li>List Textiles</li>
-    <ul><li>volume, size, color, vendor_id</li></ul>
-    <li>List Sales</li>
-    <ul><li>textile_id, volume, client_id</li></ul>
-  </ul>
-  <p>TBD: how the relation exists between Vendor and Textile - is it each vendor/textile is close enough, or should there be a unique textile per color # and vendor such that no textile is multiple uses across vendors</p>
-  <h3>Most importantly, track sales of textiles by vendors to clients</h3>
+  <hr/>
+  {{>addSale}}
+  <hr/>
+  {{>about}}
 </template>
 
 <template name="list">
